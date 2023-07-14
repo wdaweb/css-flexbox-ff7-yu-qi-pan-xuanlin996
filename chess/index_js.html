@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>象棋盤</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+    }
+
+    html,
+    body {
+      width: 100%;
+      font-family: "標楷體";
+    }
+
+    #main {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slogan {
+      writing-mode: vertical-lr;
+      font-size: 36px;
+      height: 750px;
+      text-align: center;
+    }
+
+    #container {
+      width: 700px;
+      height: 750px;
+      border: 2px solid #000;
+      position: relative;
+      margin: 0 30px;
+      padding: 28px 38px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: center;
+    }
+
+    #container .chessgroup {
+      width: 100%;
+      height: 60px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #container .w-bao {
+      width: 77.5%;
+    }
+
+    .chess {
+      width: 60px;
+      height: 60px;
+      font-size: 42px;
+      background: #fff;
+      text-align: center;
+      line-height: 60px;
+      border: 1.5px solid #000;
+      border-radius: 50%;
+    }
+
+    .text-red {
+      color: #f00;
+    }
+
+    #chessbox {
+      width: 560px;
+      height: 630px;
+      border: 1px solid #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    #chessbox .lattice {
+      width: 100%;
+      height: 280px;
+
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+
+    #lat-a4,
+    #lat-a13,
+    #lat-b29,
+    #lat-b20 {
+      background: linear-gradient(45deg, #fff 48.5%, #000 50%, #fff 51.5%)
+    }
+
+    #lat-a5,
+    #lat-a12,
+    #lat-b21,
+    #lat-b28 {
+      background: linear-gradient(135deg, #fff 48.5%, #000 50%, #fff 51.5%)
+    }
+
+    #middle {
+      width: 100%;
+      height: 70px;
+      font-size: 42px;
+      background: #fff;
+      border: 1px solid #000;
+      box-sizing: border-box;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div class="slogan">棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</div>
+    <div id="container">
+      <div class="chessgroup">
+        <div class="chess">車</div>
+        <div class="chess">馬</div>
+        <div class="chess">象</div>
+        <div class="chess">士</div>
+        <div class="chess">將</div>
+        <div class="chess">士</div>
+        <div class="chess">象</div>
+        <div class="chess">馬</div>
+        <div class="chess">車</div>
+      </div>
+      <div class="chessgroup"></div>
+      <div class="chessgroup w-bao">
+        <div class="chess">包</div>
+        <div class="chess">包</div>
+      </div>
+      <div class="chessgroup">
+        <div class="chess">卒</div>
+        <div class="chess">卒</div>
+        <div class="chess">卒</div>
+        <div class="chess">卒</div>
+        <div class="chess">卒</div>
+      </div>
+      <div class="chessgroup"></div>
+      <div class="chessgroup"></div>
+      <div class="chessgroup text-red">
+        <div class="chess">兵</div>
+        <div class="chess">兵</div>
+        <div class="chess">兵</div>
+        <div class="chess">兵</div>
+        <div class="chess">兵</div>
+      </div>
+      <div class="chessgroup w-bao text-red">
+        <div class="chess">炮</div>
+        <div class="chess">炮</div>
+      </div>
+      <div class="chessgroup"></div>
+      <div class="chessgroup text-red">
+        <div class="chess">俥</div>
+        <div class="chess">傌</div>
+        <div class="chess">相</div>
+        <div class="chess">仕</div>
+        <div class="chess">帥</div>
+        <div class="chess">仕</div>
+        <div class="chess">相</div>
+        <div class="chess">傌</div>
+        <div class="chess">俥</div>
+      </div>
+
+      <div id="chessbox">
+        <div class="lattice"></div>
+        <div id="middle">
+          <span>楚河</span>
+          <span>漢界</span>
+        </div>
+        <div class="lattice"></div>
+      </div>
+    </div>
+    <div class="slogan">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
+  </div>
+
+  <script>
+    const lattice = document.querySelectorAll('.lattice')
+
+    for (let i = 1; i <= 32; i++) {
+      lattice[0].innerHTML += `<div class="box" id="lat-a${i}"></div>`
+      lattice[1].innerHTML += `<div class="box" id="lat-b${i}"></div>`
+    }
+  </script>
+</body>
+
+</html>

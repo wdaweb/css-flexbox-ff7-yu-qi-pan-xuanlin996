@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      font-family: "Arial";
+    }
+
+    #main {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/bg-full.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #content {
+      width: 75%;
+      height: 75%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      border: 1px solid rgb(78, 78, 78);
+      background-image: linear-gradient(#ccc 50%, #000 50%);
+    }
+
+    #left {
+      width: 50%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/main.jpg");
+      background-position: center center;
+      background-size: cover;
+      display: flex;
+      color: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    #right-top {
+      width: 50%;
+      height: 50%;
+      background-image: url("./images/cloud.png");
+      background-position: right bottom;
+      background-size: 35%;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      justify-content: center;
+    }
+
+    #right-top * {
+      margin-left: 50px;
+    }
+
+    #right-bottom {
+      width: 50%;
+      height: 50%;
+      background-image: url("./images/tifa.png");
+      background-position: left bottom;
+      background-size: 35%;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #right-bottom * {
+      margin-left: 45px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="content">
+      <div id="left">
+        <img src="./images/ps4-ff7.png" width="200px" height="306px">
+        <h1>AVAILABLE NOW</h1>
+        <p style="width: 80%; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+          reiciendis suscipit ut totam
+          dolorem ipsa
+          provident nobis adipisci inventore, illo natus ex veritatis at, tempore minus quidem quaerat corporis earum.
+        </p>
+      </div>
+
+      <div id="right-top">
+        <h1>Cloud</h1>
+        <p style="width: 50%">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi reiciendis suscipit ut
+          totam dolorem ipsa
+          provident nobis adipisci inventore, illo natus ex veritatis at, tempore minus quidem quaerat corporis earum.
+        </p>
+      </div>
+      <div id="right-bottom">
+        <div style="width: 60%;">
+          <h1>Tifa</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi reiciendis suscipit ut
+            totam dolorem ipsa
+            provident nobis adipisci inventore, illo natus ex veritatis at, tempore minus quidem quaerat corporis
+            earum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
